@@ -1,0 +1,30 @@
+<% provide(:title, 'Sign up') %>
+<h1 class="hme_h1">Registration Form;</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label 'First Name:', class: 'sgn_txt' %>
+      <%= f.text_field :fname, class: 'form-control sgn_inp' %>
+
+      <%= f.label 'Last Name:', class: 'sgn_txt' %>
+      <%= f.text_field :lname, class: 'form-control sgn_inp' %>
+
+      <%= f.label 'Nickname:', class: 'sgn_txt' %>
+      <%= f.text_field :nname, class: 'form-control sgn_inp' %>
+
+      <%= f.label 'Email:', class: 'sgn_txt' %>
+      <%= f.email_field :email, class: 'form-control sgn_inp' %>
+
+      <%= f.label 'Password:', class: 'sgn_txt' %>
+      <%= f.password_field :password, class: 'form-control sgn_inp' %>
+
+      <%= f.label 'Confirm Pass:', class: 'sgn_txt' %>
+      <%= f.password_field :password_confirmation, class: 'form-control sgn_inp' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
