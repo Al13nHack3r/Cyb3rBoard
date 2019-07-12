@@ -1,0 +1,13 @@
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: rgba(0,0,0,0.6)">
+  <div class="container" style="background-color: transparent">
+    <%= link_to image_tag('alien_head.png', width: '80px', height: '50px') + 'Cyb3r Board', root_path, id: 'logo' %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",   root_path, class: 'mnu_tag' %></li>
+        <li><%= link_to "Help",   help_path, class: 'mnu_tag' %></li>
+        <li><%= link_to "About",  about_path, class: 'mnu_tag' %></li>
+        <li><%= link_to "Log in", '#', class: 'mnu_tag' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

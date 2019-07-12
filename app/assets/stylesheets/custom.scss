@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body
+{
+  padding-top: 60px;
+  background-color: #003B6F;
+}
+
+section
+{
+  overflow: auto;
+}
+
+textarea
+{
+  resize: vertical;
+}
+
+.center
+{
+  text-align: center;
+  margin-top: 50px;
+}

@@ -1,0 +1,61 @@
+/*
+    Google Fonts;
+
+        font-family: 'Righteous', cursive;
+
+        font-family: 'Cinzel', serif;
+
+        font-family: 'Orbitron', sans-serif;
+
+        font-family: 'Cormorant', serif;
+
+        font-family: 'Share Tech Mono', monospace;
+
+        font-family: 'Marcellus SC', serif;
+
+*/
+
+#logo
+{
+  float: left;
+  margin-right: 10px;
+  color: #0F0;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+}
+
+#logo:hover
+{
+  color: #00F;
+  text-decoration: none;
+}
+
+.mnu_tag
+{
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+}
+
+.center .hme_h1
+{
+  margin-bottom: 10px;
+  font-family: 'Marcellus SC', serif;
+  color: #003B6F;
+}
+
+.center .hme_h2
+{
+  font-family: 'Cinzel', serif;
+  color: #000;
+  font-size: 20px;
+}
+
+.center .hme_p
+{
+  font-family: 'Orbitron', sans-serif;
+  color: #F00;
+  margin-bottom: -10px;
+}
