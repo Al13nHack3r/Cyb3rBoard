@@ -15,6 +15,13 @@
 
 */
 
+.prfl_h1
+{
+  font-family: 'Orbitron', sans-serif;
+  color: #FFF;
+  font-size: 25px;
+}
+
 #logo
 {
   float: left;
@@ -91,4 +98,27 @@
   font-size: 20px;
   margin-top: 10px;
   text-align: center;
+}
+
+.usr_h1
+{
+  font-family: 'Cinzel', serif;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+}
+
+.usr_h2
+{
+  font-family: 'Orbitron', sans-serif;
+  color: #0F0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.usr_admin
+{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
+  color: #FFF;
 }
