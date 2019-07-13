@@ -1,15 +1,62 @@
 <% provide(:title, @user.fname) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <p class="prfl_h1">
-          <%= @user.fname %>&nbsp;&nbsp;<%= @user.lname %><br/>
-          <br/>
-          <%= @user.nname %>
-        </p>
-      </h1>
-    </section>
+
+<div class="wrapper" style="margin-top: 50px;">
+  <header class="header">
+    <%= gravatar_for @user %><br/>
+    <br/>
+    <p class="prfl_h1">
+      <%= @user.fname %>&nbsp;&nbsp;<%= @user.lname %><br/>
+    </p>
+    <p class="prfl_nname">
+      <%= @user.nname %>
+  </header>
+  <article class="main">
+    <p class="usr_bio">About <%= @user.nname %></p><br/>
+    <p class="user_profile_bio">
+      <% if @user.bio.nil? %>
+      <b style="color: #F00">USER HAS NO BIO!</b>
+      <% else %>
+      <%= @user.bio %>
+      <% end %>
+    </p>
+  </article>
+  <aside class="aside aside-1">
+    <p class="usr_repos">
+      My Repos;
+    </p>
+    <p class="repos">
+      <%= link_to 'Cyb3r Portal', 'https://github.com/Al13nHack3r/Cyb3rBoard.git', target: '_blank' %><br/>
+      <%= link_to 'DDoS Script', 'https://www.google.xyz', target: '_blank' %><br/>
+      <%= link_to 'SQL Injector', 'https://www.google.com', target: '_blank' %><br/>
+    </p>
+    <%= link_to 'Upload Repo!', '#', class: 'btn btn-success btn-block', style: "font-family: 'Cormorant', serif; font-size: 20px;" %>
   </aside>
+  <aside class="aside aside-2">
+    <p class="usr_bio">
+      External Links;<br/>
+    </p><br/>
+      <p class="ext_lnk">
+      Github:<br/>
+      <% if @user.github.nil? %>
+      <b style="color: #F00">NO GITHUB!</b>
+      <% else %>
+      <%= link_to @user.github, 'https://www.github.com/' + @user.github, target: '_blank' %><br/>
+      <% end %>
+      <br/>
+      Discord:<br/>
+      <% if @user.discord.nil? %>
+      <b style="color: #F00">NO DISCORD!</b>
+      <% else %>
+      <%= @user.discord %><br/>
+      <% end %>
+      <br/>
+      Website:<br/>
+      <% if @user.web.nil? %>
+      <b style="color: #F00">NO WEBSITE!</b>
+      <% else %>
+      <%= link_to @user.web, @user.web, target: '_blank' %>
+      <% end %>
+    </p>
+  </aside>
+  <%#-<footer class="footer">Footer</footer> %>
 </div>

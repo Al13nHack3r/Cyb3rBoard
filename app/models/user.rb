@@ -12,6 +12,18 @@ class User < ApplicationRecord
   # Validate Nick Name Variables #
   validates :nname, presence: true, length: { maximum: 50 }
 
+  # Validate Bio Variables #
+  validates :bio, presence: true, length: { maximum: 500 }, allow_nil: true
+
+  # Validate Web Variables #
+  validates :web, presence: true, length: { maximum: 30 }, allow_nil: true
+
+  # Validate Discord Variables #
+  validates :discord, presence: true, length: { maximum: 50 }, allow_nil: true
+
+  # Validate Github Variables #
+  validates :github, presence: true, length: { maximum: 75 }, allow_nil: true
+
   # Set Email REGEX Strings #
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 

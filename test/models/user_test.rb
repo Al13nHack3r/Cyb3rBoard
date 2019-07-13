@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(fname: "Al13n", lname: "Hack3r", nname: "Cyb3r Al13n", email: "al13nhack3r@protonmail.com", password: "Computing19", password_confirmation: "Computing19")
+    @user = User.new(fname: "Al13n", lname: "Hack3r", nname: "Cyb3r Al13n", email: "al13nhack3r@protonmail.com", password: "Computing19", password_confirmation: "Computing19", bio: "This is my BIO!", web: "www.mysite.com", github: "github.com/Al13nHack3r", discord: "Al13nHack3r#8982")
   end
 
   test "should be valid" do
@@ -17,6 +17,46 @@ class UserTest < ActiveSupport::TestCase
 
   test "first name should not be too long" do
     @user.fname = "a" * 51
+    assert_not @user.valid?
+  end
+
+  test "bio should be present" do
+    @user.bio = " "
+    assert_not @user.valid?
+  end
+
+  test "bio should not be too long" do
+    @user.bio = "a" * 501
+    assert_not @user.valid?
+  end
+
+  test "web should be present" do
+    @user.web = " "
+    assert_not @user.valid?
+  end
+
+  test "web should not be too long" do
+    @user.web = "a" * 31
+    assert_not @user.valid?
+  end
+
+  test "discord should be present" do
+    @user.discord = " "
+    assert_not @user.valid?
+  end
+
+  test "discord should not be too long" do
+    @user.discord = "a" * 51
+    assert_not @user.valid?
+  end
+
+  test "github should be present" do
+    @user.github = "  "
+    assert_not @user.valid?
+  end
+
+  test "github should not be too long" do
+    @user.github = "a" * 76
     assert_not @user.valid?
   end
 

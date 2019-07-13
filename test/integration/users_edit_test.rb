@@ -13,6 +13,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), params: { user: { fname:  "",
                                               lname:  "",
                                               nname:  "",
+                                              web:    "",
+                                              bio:    "",
+                                              discord: "",
+                                              github:    "",
                                               email: "al13nhack3r@protonmail",
                                               password:              "foo",
                                               password_confirmation: "bar" } }
@@ -27,10 +31,18 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     fname  = "Al13n"
     lname  = "Hack3r"
     nname  = "Cyb3r Al13ns"
+    web    = "www.mysite.com"
+    bio    = "This is my BIO!"
+    discord = "Al13nHack3r#1688"
+    github = "github.com/Al13nHack3r"
     email = "al13nhack3r@protonmail.com"
     patch user_path(@user), params: { user: { fname:  fname,
                                               lname:  lname,
                                               nname:  nname,
+                                              web:    web,
+                                              discord: discord,
+                                              github: github,
+                                              bio: bio,
                                               email: email,
                                               password:              "",
                                               password_confirmation: "" } }
@@ -41,6 +53,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal lname,  @user.lname
     assert_equal nname,  @user.nname
     assert_equal email,  @user.email
+    assert_equal bio,    @user.bio
+    assert_equal web,    @user.web
+    assert_equal discord, @user.discord
+    assert_equal github, @user.github
   end
 
 end
