@@ -56,7 +56,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal bio,    @user.bio
     assert_equal web,    @user.web
     assert_equal discord, @user.discord
-    assert_equal github, @user.github
+    assert_equal github, @user.github, allow_nil: true
   end
 
 end

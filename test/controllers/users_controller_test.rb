@@ -27,6 +27,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should redirect update when not logged in" do
     patch user_path(@user), params: { user: { fname: @user.fname,
                                               lname: @user.lname,
+                                              github: @user.github,
+                                              bio: @user.bio,
+                                              discord: @user.discord,
+                                              web: @user.web,
                                               nname: @user.nname,
                                               email: @user.email } }
     assert_not flash.empty?
@@ -45,6 +49,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     patch user_path(@user), params: { user: { fname: @user.fname,
                                               lname: @user.lname,
                                               nname: @user.nname,
+                                              bio: @user.bio,
+                                              github: @user.github,
+                                              discord: @user.discord,
+                                              web: @user.web,
                                               email: @user.email } }
     assert flash.empty?
     assert_redirected_to root_url
