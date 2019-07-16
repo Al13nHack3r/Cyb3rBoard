@@ -8,10 +8,15 @@
   .user {
     margin-top: 5em;
     padding-top: 0;
+    font-family: 'Marcellus SC', serif;
+    font-size: 13px;
   }
   .content {
     display: block;
     margin-left: 60px;
+    color: #FFF;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
     img {
       display: block;
       padding: 5px 0;
@@ -19,6 +24,8 @@
   }
   .timestamp {
     color: #C0C0C0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
     display: block;
     margin-left: 60px;
   }
