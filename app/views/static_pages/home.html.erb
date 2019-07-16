@@ -1,3 +1,15 @@
+<% if logged_in? %>
+<center>
+  <div class="center jumbotron">
+    <section class="user_info">
+      <%= render 'shared/user_info' %>
+    </section>
+    <section class="micropost_form">
+      <%= render 'shared/micropost_form' %>
+    </section>
+</center>
+<% else %>
+
 <div class="center jumbotron">
   <h1 class="hme_h1">Welcome to the Cyb3r Board</h1>
 
@@ -12,3 +24,4 @@
     <%= link_to image_tag('rails.png', width: '50px', height: '50px'), 'http://rubyonrails.org/', target: '_blank' %>&nbsp;&nbsp;<%= link_to image_tag('discord.png', width: '50px', height: '50px'), 'https://discord.gg/BVcKe2K', target: '_blank' %>&nbsp;&nbsp;<%= link_to image_tag('heroku.png', width: '50px', height: '50px'), 'https://www.heroku.com', target: '_blank' %>&nbsp;&nbsp;<%= link_to image_tag('github.png', height: '50px', width: '50px'), 'https://github.com/Al13nHack3r', target: '_blank' %>
   </p>
 </div>
+<% end %>

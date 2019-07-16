@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  #get 'password_resets/new'
+
+  #get 'password_resets/edit'
+
   # Set Project Root Directory #
   root 'static_pages#home'
 
@@ -17,5 +21,7 @@ Rails.application.routes.draw do
 
   # Set Proejct Resources #
   resources :users
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :microposts,          only: [:create, :destroy]
 
 end

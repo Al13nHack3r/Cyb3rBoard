@@ -13,12 +13,16 @@
   <article class="main">
     <p class="usr_bio">About <%= @user.nname %></p><br/>
     <p class="user_profile_bio">
-      <% if @user.bio.nil? %>
-      <b style="color: #F00">USER HAS NO BIO!</b>
-      <% else %>
-      <%= @user.bio %>
-      <% end %>
-    </p>
+      <%= link_to 'Create Post', root_path, class: 'btn btn-success btn-block' %><br/>
+      <div class="col-md-8">
+        <% if @user.microposts.any? %>
+          <h3>Microposts (<%= @user.microposts.count %>)</h3>
+          <ol class="microposts">
+            <%= render @microposts %>
+          </ol>
+          <%= will_paginate @microposts %>
+        <% end %>
+      </div>
   </article>
   <aside class="aside aside-1">
     <p class="usr_repos">
